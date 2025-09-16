@@ -1,0 +1,395 @@
+// Typography styles for EXPO REAL ESTATE
+
+// Google Fonts Import
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+// Import variables from main.scss
+// Color Variables
+$red: #E31E24;
+$dark: #1a1a1a;
+$gray: #333;
+$light-gray: #f5f5f5;
+$white: #ffffff;
+$black: #000000;
+
+// Gradient Variables
+$gradient-red: linear-gradient(135deg, #E31E24 0%, #b71c1c 100%);
+$gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+
+// Typography Variables
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+// Typography Scale
+$h1-size: clamp(2.5rem, 8vw, 8rem);
+$h2-size: clamp(2rem, 6vw, 4rem);
+$h3-size: clamp(1.5rem, 4vw, 2.5rem);
+$h4-size: clamp(1.25rem, 3vw, 2rem);
+$h5-size: clamp(1.125rem, 2.5vw, 1.5rem);
+$h6-size: clamp(1rem, 2vw, 1.25rem);
+
+// Base Typography
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: $white;
+}
+
+h1 {
+  font-size: $h1-size;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $h2-size;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: $h3-size;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: $h4-size;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: $h5-size;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: $h6-size;
+  font-weight: 500;
+}
+
+// Paragraph
+p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  
+  &.large {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  &.small {
+    font-size: 0.875rem;
+  }
+}
+
+// Links
+a {
+  color: $red;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: lighten($red, 15%);
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 0 0 1rem 1.5rem;
+  padding: 0;
+  
+  li {
+    margin-bottom: 0.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Special Typography Classes
+.hero-title {
+  font-size: $h1-size;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  background: $gradient-red;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  
+  &.white {
+    background: $white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .word {
+    display: inline-block;
+    margin-right: 0.2em;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.section-title {
+  font-size: $h2-size;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: $gradient-red;
+    border-radius: 2px;
+  }
+  
+  &.left {
+    text-align: left;
+    
+    &::after {
+      left: 0;
+      transform: none;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba($white, 0.8);
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  &.left {
+    text-align: left;
+  }
+}
+
+// Stats typography
+.stat-number {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: $red;
+  line-height: 1;
+  display: block;
+  
+  &.large {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+// Quote typography
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: $white;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+  
+  &::before,
+  &::after {
+    content: '"';
+    font-size: 4rem;
+    font-weight: 900;
+    color: $red;
+    position: absolute;
+  }
+  
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  
+  &::after {
+    bottom: -1rem;
+    right: 0;
+  }
+}
+
+// Brand typography
+.brand {
+  font-family: $font-primary;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $white;
+  
+  .red {
+    color: $red;
+  }
+}
+
+// Button typography
+.btn-text {
+  font-family: $font-primary;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// Label typography
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $red;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+// Price typography
+.price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: $red;
+  
+  .currency {
+    font-size: 0.7em;
+    vertical-align: super;
+  }
+  
+  .period {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: rgba($white, 0.6);
+  }
+}
+
+// Highlight text
+.highlight {
+  background: linear-gradient(135deg, rgba($red, 0.2) 0%, rgba($red, 0.1) 100%);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid rgba($red, 0.3);
+}
+
+// Gradient text
+.gradient-text {
+  background: $gradient-red;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+// Uppercase text
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// Text sizes
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+
+// Font weights
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+// Text alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Line heights
+.leading-tight { line-height: 1.25; }
+.leading-snug { line-height: 1.375; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
+
+// Letter spacing
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-normal { letter-spacing: 0; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+// Text decorations
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+// Text colors with opacity
+.text-white-90 { color: rgba($white, 0.9); }
+.text-white-80 { color: rgba($white, 0.8); }
+.text-white-70 { color: rgba($white, 0.7); }
+.text-white-60 { color: rgba($white, 0.6); }
+.text-white-50 { color: rgba($white, 0.5); }
+
+// Responsive typography
+@media (max-width: $mobile) {
+  h1 { font-size: clamp(1.75rem, 6vw, 3rem); }
+  h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 4vw, 2rem); }
+  
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 3rem);
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
