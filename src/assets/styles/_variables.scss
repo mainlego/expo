@@ -2,16 +2,36 @@
 
 // Color Variables
 $red: #E31E24;
+$red-light: #ff4757;
+$red-dark: #b71c1c;
 $dark: #1a1a1a;
+$dark-light: #2d2d2d;
+$dark-darker: #0f0f0f;
 $gray: #333;
+$gray-light: #666;
 $light-gray: #f5f5f5;
 $white: #ffffff;
+$white-soft: #fafafa;
 $black: #000000;
 
-// Gradient Variables
+// New accent colors
+$orange: #ff6b35;
+$purple: #8e44ad;
+$blue: #3498db;
+
+// Enhanced Gradient Variables
 $gradient-red: linear-gradient(135deg, #E31E24 0%, #b71c1c 100%);
+$gradient-red-vibrant: linear-gradient(135deg, #ff4757 0%, #E31E24 50%, #b71c1c 100%);
 $gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+$gradient-dark-deep: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
 $gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+$gradient-geometric: linear-gradient(45deg, #E31E24 0%, #ff4757 25%, #E31E24 50%, #b71c1c 75%, #E31E24 100%);
+
+// 3D Effect Colors
+$shadow-red: #8B0000;
+$shadow-dark: #000000;
+$highlight-red: #ff6b6b;
+$highlight-white: #ffffff;
 
 // Typography Variables
 $font-primary: 'Montserrat', sans-serif;

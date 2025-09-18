@@ -52,12 +52,13 @@
           </div>
 
           <div class="advantages-grid">
-            <div v-for="(advantage, index) in advantagesData" :key="index" class="advantage-card">
+            <div v-for="(advantage, index) in advantagesData" :key="index" class="advantage-card glass-enhanced geometric-bg card-enhanced-hover reveal-on-scroll">
               <div class="advantage-icon">
                 <component :is="advantage.icon" />
               </div>
               <h3 class="advantage-title">{{ advantage.title }}</h3>
               <p class="advantage-description">{{ advantage.description }}</p>
+              <div class="card-number">{{ String(index + 1).padStart(2, '0') }}</div>
             </div>
           </div>
         </div>
@@ -71,13 +72,14 @@
           </div>
 
           <div class="investment-grid">
-            <div v-for="(type, index) in investmentTypes" :key="index" class="investment-card">
+            <div v-for="(type, index) in investmentTypes" :key="index" class="investment-card glass-enhanced geometric-bg complex-variant card-enhanced-hover reveal-on-scroll">
               <div class="investment-number">{{ String(index + 1).padStart(2, '0') }}</div>
               <h3 class="investment-title">{{ type.title }}</h3>
               <p class="investment-description">{{ type.description }}</p>
               <div v-if="type.roi" class="investment-roi">
                 Доходность: <span class="roi-value">{{ type.roi }}</span>
               </div>
+              <div class="card-gradient-overlay"></div>
             </div>
           </div>
         </div>
@@ -92,12 +94,12 @@
 
           <div class="location-content">
             <div class="location-image">
-              <img 
-                src="/images/moscow-city-premium.jpg" 
-                alt="Moscow City Premium Location"
+              <img
+                src="https://images.unsplash.com/photo-1520637836862-4d197d17c38a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Moscow City Premium Business District - Modern Skyscrapers"
                 loading="lazy"
               />
-              <div class="image-overlay"></div>
+              <div class="image-overlay geometric-bg red-variant"></div>
             </div>
 
             <div class="location-features">
@@ -124,22 +126,22 @@
         <div class="container">
           <h2 class="section-title">Галерея выставки</h2>
           <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="/images/exhibition-hall-1.jpg" alt="Exhibition Hall" loading="lazy" />
+            <div class="gallery-item glass-enhanced">
+              <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern Exhibition Hall" loading="lazy" />
               <div class="gallery-overlay">
-                <h3>Выставочный зал</h3>
+                <h3>Современный выставочный зал</h3>
               </div>
             </div>
-            <div class="gallery-item">
-              <img src="/images/vip-negotiation-room.jpg" alt="VIP Room" loading="lazy" />
+            <div class="gallery-item glass-enhanced">
+              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="VIP Meeting Room" loading="lazy" />
               <div class="gallery-overlay">
-                <h3>VIP переговорная</h3>
+                <h3>VIP переговорная премиум класса</h3>
               </div>
             </div>
-            <div class="gallery-item">
-              <img src="/images/investment-opportunities.jpg" alt="Investment Zone" loading="lazy" />
+            <div class="gallery-item glass-enhanced">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Investment Analytics Zone" loading="lazy" />
               <div class="gallery-overlay">
-                <h3>Инвестиционная зона</h3>
+                <h3>Зона инвестиционной аналитики</h3>
               </div>
             </div>
           </div>
@@ -583,12 +585,27 @@ export default {
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-10px);
-      border-color: rgba($red, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+      border-color: rgba($red, 0.6);
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba($red, 0.2);
+    }
+
+    .card-number {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba($red, 0.1);
+      text-shadow: 2px 2px 4px rgba($black, 0.5);
+      pointer-events: none;
     }
 
     .advantage-icon {
@@ -637,11 +654,31 @@ export default {
     border-radius: 20px;
     padding: 2rem;
     position: relative;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-5px);
-      border-color: rgba($red, 0.4);
+      transform: translateY(-12px) scale(1.02);
+      border-color: rgba($red, 0.6);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba($red, 0.15);
+
+      .card-gradient-overlay {
+        opacity: 1;
+      }
+    }
+
+    .card-gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba($red, 0.05) 0%, rgba($red-light, 0.02) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
     }
 
     .investment-number {

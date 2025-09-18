@@ -139,21 +139,119 @@ ul, ol {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
-  
+
   &.white {
     background: $white;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .word {
     display: inline-block;
     margin-right: 0.2em;
-    
+
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+// Enhanced 3D Typography inspired by references
+.text-3d-enhanced {
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 12rem);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  color: $white;
+
+  // Multiple layered shadows for depth
+  text-shadow:
+    2px 2px 0 $shadow-red,
+    4px 4px 0 darken($shadow-red, 10%),
+    6px 6px 0 darken($shadow-red, 20%),
+    8px 8px 0 darken($shadow-red, 30%),
+    10px 10px 0 darken($shadow-red, 40%),
+    12px 12px 0 darken($shadow-red, 50%),
+    14px 14px 0 darken($shadow-red, 60%),
+    16px 16px 0 darken($shadow-red, 70%),
+    18px 18px 20px rgba(0, 0, 0, 0.4),
+    20px 20px 30px rgba(0, 0, 0, 0.3),
+    22px 22px 40px rgba(0, 0, 0, 0.2);
+
+  transform: perspective(1000px) rotateX(20deg) rotateY(-5deg);
+
+  &.red-variant {
+    background: $gradient-red-vibrant;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+      2px 2px 0 $red-dark,
+      4px 4px 0 darken($red-dark, 15%),
+      6px 6px 0 darken($red-dark, 25%),
+      8px 8px 0 darken($red-dark, 35%),
+      10px 10px 0 darken($red-dark, 45%),
+      12px 12px 0 darken($red-dark, 55%),
+      14px 14px 0 darken($red-dark, 65%),
+      16px 16px 0 darken($red-dark, 75%),
+      18px 18px 20px rgba($red, 0.4),
+      20px 20px 30px rgba($red, 0.3),
+      22px 22px 40px rgba($red, 0.2);
+  }
+
+  .letter {
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      transform: translateZ(30px) rotateY(15deg) scale(1.1);
+      filter: brightness(1.3);
+    }
+  }
+
+  // Animation for entrance
+  &.animate-in {
+    animation: text3DSlideIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+}
+
+@keyframes text3DSlideIn {
+  0% {
+    transform: perspective(1000px) rotateX(90deg) rotateY(-30deg) translateY(100px);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(1000px) rotateX(45deg) rotateY(-15deg) translateY(20px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(20deg) rotateY(-5deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+// Floating 3D text effect
+.text-floating-3d {
+  animation: float3D 6s ease-in-out infinite;
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(20deg) rotateY(-5deg) translateY(0) translateZ(0);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(15deg) rotateY(-2deg) translateY(-10px) translateZ(10px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(25deg) rotateY(-8deg) translateY(-5px) translateZ(5px);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(18deg) rotateY(-3deg) translateY(-15px) translateZ(15px);
   }
 }
 

@@ -4,11 +4,11 @@
     <div class="hero-background">
       <div class="video-container">
         <img
-            src="/images/hero-background.jpg"
-            alt="Real Estate Exhibition Background"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Modern Business Architecture - Real Estate Exhibition Background"
             class="hero-image"
         />
-        <div class="video-overlay"></div>
+        <div class="video-overlay geometric-bg complex-variant"></div>
       </div>
     </div>
 
@@ -25,20 +25,32 @@
     <!-- Hero Content -->
     <div class="container">
       <div class="hero-content">
-        <!-- Main Title with 3D Effect -->
-        <div class="hero-title-wrapper">
-          <h1 ref="titleRef" class="hero-title">
+        <!-- Enhanced 3D Title with Multiple Effects -->
+        <div class="hero-title-wrapper geometric-bg red-variant">
+          <h1 ref="titleRef" class="hero-title text-3d-enhanced red-variant animate-in text-floating-3d">
             <div class="title-line">
-              <span class="letter-word">EXPO</span>
+              <span class="letter-word">
+                <span class="letter">E</span><span class="letter">X</span><span class="letter">P</span><span class="letter">O</span>
+              </span>
             </div>
             <div class="title-line">
-              <span class="letter-word red">REAL</span>
+              <span class="letter-word red">
+                <span class="letter">R</span><span class="letter">E</span><span class="letter">A</span><span class="letter">L</span>
+              </span>
             </div>
             <div class="title-line">
-              <span class="letter-word">ESTATE</span>
+              <span class="letter-word">
+                <span class="letter">E</span><span class="letter">S</span><span class="letter">T</span><span class="letter">A</span><span class="letter">T</span><span class="letter">E</span>
+              </span>
             </div>
           </h1>
-          <div class="title-year">2025</div>
+          <div class="title-year glass-enhanced">2025</div>
+
+          <!-- 3D Geometric Elements -->
+          <div class="geometric-3d cube" style="top: 10%; left: 10%;"></div>
+          <div class="geometric-3d pyramid" style="top: 20%; right: 15%;"></div>
+          <div class="geometric-3d cube" style="bottom: 30%; left: 20%;"></div>
+          <div class="geometric-3d pyramid" style="bottom: 10%; right: 10%;"></div>
         </div>
 
         <!-- Subtitle -->
